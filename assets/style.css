@@ -1,0 +1,49 @@
+body {
+    background-color: #222222;
+    color: #CCC;
+}
+
+h1 {
+    color: #CCC;
+}
+
+.app {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.btn-app {
+    width: 100%;
+    background-color: #444;
+    color: #CCC;
+    font-size: 1.5rem;
+    transition: all .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.btn-app:focus {
+    background-color: #505050;
+    color: #CCC;
+    box-shadow: 0 0 10px rgb(182, 182, 182);
+    transform: scale(1.1);
+}
+
+.btn-app:hover {
+    background-color: #505050;
+    color: #CCC;
+    box-shadow: 0 0 10px rgb(182, 182, 182);
+    transform: scale(1.1);
+}
+
+.btn-app img {
+    width: 100%;
+    padding: 10%;
+}
+
+.div-app-row {
+    max-width: 1000px;
+}
+
+.modal {
+    color: black;
+}
