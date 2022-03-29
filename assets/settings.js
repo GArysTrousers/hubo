@@ -1,5 +1,5 @@
 var settings = {
-  "apps_in_row": 4,
+  "appsInRow": 4,
   "apps": [
     {
       "name": "Emby",
@@ -20,6 +20,26 @@ var settings = {
       "name": "YouTube",
       "link": "https://www.youtube.com/",
       "icon": "youtube.png"
-    }
+    },
+    {
+      "name": "ABC iView",
+      "link": "https://iview.abc.net.au/",
+      "icon": "abc.png"
+    },
+    {
+      "name": "Seven Plus",
+      "link": "https://7plus.com.au/",
+      "icon": "seven.png"
+    },
+    {
+      "name": "Nine Now",
+      "link": "https://www.9now.com.au/",
+      "icon": "nine.png"
+    },
+    {
+      "name": "Ten Play",
+      "link": "https://10play.com.au/",
+      "icon": "ten.png"
+    },
   ]
 }

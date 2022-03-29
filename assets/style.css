@@ -1,49 +1,62 @@
-body {
-    background-color: #222222;
-    color: #CCC;
+:root {
+  --app-cols: 4;
+}
+
+html, body {
+  font-family: sans-serif;
+  background-color: #222222;
+  color: #CCC;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-    color: #CCC;
+  color: #CCC;
+}
+
+.page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--app-cols), 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 2rem;
 }
 
 .app {
-    margin-top: 15px;
-    margin-bottom: 15px;
+  width: 100%;
+  background-color: #444;
+  font-size: 1.5rem;
+  transition: all .3s ease-in-out;
+  border-radius: 10px;
 }
 
-.btn-app {
-    width: 100%;
-    background-color: #444;
-    color: #CCC;
-    font-size: 1.5rem;
-    transition: all .3s ease-in-out;
-    border-radius: 10px;
+.app:focus {
+  background-color: #505050;
+  box-shadow: 0 0 10px rgb(182, 182, 182);
+  transform: scale(1.1);
 }
 
-.btn-app:focus {
-    background-color: #505050;
-    color: #CCC;
-    box-shadow: 0 0 10px rgb(182, 182, 182);
-    transform: scale(1.1);
+.app:hover {
+  background-color: #505050;
+  box-shadow: 0 0 10px rgb(182, 182, 182);
+  transform: scale(1.1);
 }
 
-.btn-app:hover {
-    background-color: #505050;
-    color: #CCC;
-    box-shadow: 0 0 10px rgb(182, 182, 182);
-    transform: scale(1.1);
+.app img {
+  width: 80%;
+  margin: 10%;
 }
 
-.btn-app img {
-    width: 100%;
-    padding: 10%;
-}
-
-.div-app-row {
-    max-width: 1000px;
-}
-
-.modal {
-    color: black;
+.app-name {
+  text-align: center;
+  margin: 0.5rem;
 }

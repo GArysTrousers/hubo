@@ -1,20 +1,15 @@
-function AddApps() {
-  let col_width = 12 / settings.apps_in_row;
-  let html = "";
+function addApps() {
   let count = 1;
+  let html = "";
   for (let app of settings.apps) {
     html += `
-    <div class="col-${col_width} app">
-      <a class="btn btn-app" href="${app.link}" id="${count}" tabindex="${count}">
+      <a class="app" href="${app.link}" id="${count}" tabindex="${count}">
         <img src="assets/icons/${app.icon}">
-        <div class="mt-2">
-        ${app.name}
-        </div>
-      </a>
-    </div>`;
+        <div class="app-name">${app.name}</div>
+      </a>`;
     count++;
   }
-  $('.div-app-row').html(html);
+  $('#div-app-grid').html(html);
 }
 
 function wrap(val, min, max) {
@@ -26,13 +21,15 @@ function wrap(val, min, max) {
 }
 
 $(document).ready(function () {
-  AddApps();
+  addApps();
+  let root = document.documentElement;
+  root.style.setProperty('--app-cols', settings.appsInRow);
 });
 
 $(document).keydown(function (e) {
   var focus = $(':focus');
   if (e.keyCode >= 37 && e.keyCode <= 40) {
-    if (focus.hasClass('btn-app')) {
+    if (focus.hasClass('app')) {
       var curId = parseInt(focus.attr('id'));
       var nextId = 0;
       //left
@@ -57,15 +54,5 @@ $(document).keydown(function (e) {
     } else {
       $('#1').focus();
     }
-  }
-  //show shortcuts
-  else if (e.keyCode == 83) {
-    let args = `${window.location.href} --start-fullscreen`
-    let html = '<h3 class="modal-title">Shortcuts</h3><hr>';
-    html += `<h5>Edge</h5>"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe" ${args}<br>`;
-
-    $('#div-shortcuts').html(html);
-    $('#modal-shortcuts').modal('show');
-    console.log("show modal");
   }
 });
